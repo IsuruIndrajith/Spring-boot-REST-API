@@ -26,4 +26,10 @@ public class UserService {
 //[new TypeToken<List<UserDTO>>(){}.getType()] <-- this gives the generic type of DTO at the current runtime
     }
 
+//    Save User service.
+    public UserDTO saveUser(UserDTO userDTO){
+        userRepo.save(modelMapper.map(userDTO, User.class));
+        return userDTO;
+    }
+
 }
